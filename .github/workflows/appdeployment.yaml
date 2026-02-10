@@ -45,11 +45,6 @@ jobs:
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
 
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    environment: testing
-    steps:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@0e613a0980cbf65ed5b322eb7a1e075d28913a83
         with:
