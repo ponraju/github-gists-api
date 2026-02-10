@@ -26,7 +26,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
-          images: my-docker-hub-namespace/my-docker-hub-repository
+          images: ponraj0204/giststest
 
       - name: Build and push Docker image
         id: push
@@ -41,7 +41,7 @@ jobs:
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v3
         with:
-          subject-name: index.docker.io/my-docker-hub-namespace/my-docker-hub-repository
+          subject-name: index.docker.io/ponraj0204/giststest
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
 
